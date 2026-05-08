@@ -51,6 +51,6 @@ Breaking changes within the 0.x line are called out explicitly.
   hit `UnicodeEncodeError` with the cp1252 default. (#543, #550, #576)
 - Cache and log directories moved to `~/.tradingagents/` to resolve Docker
   permission issues. (#519)
-- `memory_log_max_entries` default raised from 50 to 100 — I kept running into
-  the old cap during longer backtests and losing useful resolved entries.
-  100 feels like a reasonable ceiling without bloating the SQLite file much.
+- **`memory_log_max_entries` default raised from 50 to 100** — 50 felt too
+  low when running backtests over several months; bumped this for my own use
+  so older resolved entries don't get pruned too aggressively.
